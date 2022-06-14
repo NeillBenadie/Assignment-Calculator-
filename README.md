@@ -1,3 +1,3 @@
 # Assignment-Calculator-
 
-A little Calculator
+A simple Calculator
