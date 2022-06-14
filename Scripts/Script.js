@@ -47,22 +47,25 @@ class Calculator {
 		this.screenValue = this.screenValue.toString().slice(0, -1);
 	}
 	anotherNumber(number) {
+		if (number === '0' && this.screenValue.toString() ==='0') return; //stops the function if the user wants to spam '0' from the start
 		if (number === '.' && this.screenValue.includes('.')) return; //stops the function if there is already '.' in
-		if (Object.keys(this.screenValue).length > 23) return;//stops the user from typing a number that goes past screen borders
+		if (Object.keys(this.screenValue).length > 23) return; //stops the user from typing a number that goes past screen borders
 		this.screenValue = this.screenValue.toString() + number.toString();	
 	}
 	chosenOperation(operation) {
+		if (operation === '+' || '-' || '*' || '%' || '-' || '/'){ //Changes the operation if a different operation is clicked.
+			this.operation = operation;
+		}
 		if(this.screenValue === '') return
 		if(this.savedValue !== ''){
 			this.operate();	
 		}
-		this.operation = operation;
 		this.savedValue = this.screenValue; //done with the number
 		this.screenValue = '';
 	}
 
 	add(previous,current){
-		if(previous == 9 && current == 10){//little cringey meme
+		if(previous == 9 && current == 10){ //little cringey meme
 			return 21; 
 		}else{
 			return  previous + current;
@@ -114,7 +117,11 @@ class Calculator {
 				return;
 		}
 		if(equation != "Lol, no"){
-			this.screenValue = equation.toFixed(2);
+			if (Number(equation) === equation && equation % 1 !== 0){ //Displaying the number like a decimal by 6 zeros after the comma when its a decimal or displaying like a int when its an Int.
+				this.screenValue = equation.toFixed(6);					
+			}else{
+				this.screenValue = equation;
+			}	
 		}else{
 			this.screenValue = equation;
 		}
