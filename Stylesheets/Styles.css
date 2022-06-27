@@ -1,4 +1,5 @@
-body{
+.Full{
+	box-sizing: border-box;
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -11,12 +12,11 @@ body{
 	background-color: rgb(65, 65, 70);
 	color: black;
 	display: flex;
-	align-items: flex-start;
-	width: 15vw;
-	height: 40vh;
-	border-width: 1px;
+	max-width: 15vw;
+	min-height: 38vh;
 	border-style:groove;
 	border-width: 5px;
+	border-radius: 10px;
 	border-color: #919191;
 	box-shadow: 1px 1px 1px #919191,
 				1px 2px 1px #919191,
@@ -33,14 +33,15 @@ body{
 				1px 25px 35px rgba(16,16,16,0.2),
 				1px 30px 60px rgba(16,16,16,0.4);
 }
-button{
+.button{
 	box-sizing: border-box;
-	height: 5vh;
-	width: 3.5vw;
+	margin: 1px;
+	min-height: 5vh;
+	min-width: 3.5vw;
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 10px;
-	font-size: 25px;
+	font-size: 1.5vw;
 	box-shadow: 1px 1px 1px black,
 				1px 2px 1px black,
 				1px 3px 1px black,
@@ -55,26 +56,28 @@ button:hover{
 	transition: 0.5s ease-out ;
 	cursor: pointer;
 }
+
 .Zero{
 	width: 7vw;
 }
+
 #Screen{
 	box-sizing: border-box;
 	background-color: rgb(104, 131, 112);
-	width: 14vw;
-	height: 5vw;
+	min-width: 14vw;
+	min-height: 5vw;
 	border-style:outset;
 	border-width: 2px;
 	border-color: rgb(100, 100, 128);
 	color: black;
 	text-align: end;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 4vh;
-	overflow-wrap: break-word;
+	font-size: 2vw;
+	word-wrap:break-word;
 	border-radius: 10px;
-	margin-left: 10px;
-	margin-top: 10px;
+	margin: 3.5%;
 }
+
 .buttons{
 	box-sizing: border-box;
 	flex-wrap: wrap;
@@ -84,4 +87,81 @@ button:hover{
 	justify-content: space-between;
 	justify-content: center;
 	background-color: rgb(65, 65, 70);
+}
+
+@media only screen and (max-width:900px) {
+	.Full{
+		margin: 0.1%;
+		box-sizing: border-box;
+		position: absolute;
+	}
+	.Calculator{
+		flex-wrap: wrap;
+		background-color: rgb(65, 65, 70);
+		color: black;
+		display: flex;
+		min-width: 90vw;
+		min-height: 90vh;
+		border-style:groove;
+		border-width: 5px;
+		border-radius: 10px;
+		border-color: #919191;
+		box-shadow: none;
+	}	
+
+	.button{
+		box-sizing: border-box;
+		margin: 1px;
+		min-height: 10vh;
+		min-width: 20vw;
+		border-style: solid;
+		border-width: 1px;
+		border-radius: 10px;
+		font-size: 5vw;
+		box-shadow: 1px 1px 1px black,
+					1px 2px 1px black,
+					1px 3px 1px black,
+					1px 4px 1px black;
+	}
+	.Equals{
+		background-color: blueviolet; 
+	}
+	button:hover{
+		background-color: royalblue;
+		color: white;
+		transition: 0.5s ease-out ;
+		cursor: pointer;
+	}
+	
+	.Zero{
+		min-width: 40vw;
+	}
+	
+	#Screen{
+		box-sizing: border-box;
+		background-color: rgb(104, 131, 112);
+		min-width: 80vw;
+		max-height: auto;
+		border-style:outset;
+		border-width: 2px;
+		border-color: rgb(100, 100, 128);
+		color: black;
+		text-align: end;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 7vh;
+		word-wrap:break-word;
+		border-radius: 10px;
+		margin: 6%;
+	}
+	
+	.buttons{
+		box-sizing: border-box;
+		flex-wrap: wrap;
+		display: flex;
+		align-items:center;
+		text-align: center;
+		justify-content: space-between;
+		justify-content: center;
+		background-color: rgb(65, 65, 70);
+	}
 }
