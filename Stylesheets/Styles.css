@@ -94,6 +94,7 @@ button:hover{
 		margin: 0.1%;
 		box-sizing: border-box;
 		position: absolute;
+		height: 100%;
 	}
 	.Calculator{
 		flex-wrap: wrap;
@@ -101,7 +102,7 @@ button:hover{
 		color: black;
 		display: flex;
 		min-width: 90vw;
-		min-height: 90vh;
+		min-height: 100vh;
 		border-style:groove;
 		border-width: 5px;
 		border-radius: 10px;
@@ -148,7 +149,7 @@ button:hover{
 		color: black;
 		text-align: end;
 		font-family: Arial, Helvetica, sans-serif;
-		font-size: 6vh;
+		font-size: 7vh;
 		word-wrap:break-word;
 		border-radius: 10px;
 		margin: 6%;
