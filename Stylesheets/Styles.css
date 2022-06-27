@@ -141,14 +141,14 @@ button:hover{
 		box-sizing: border-box;
 		background-color: rgb(104, 131, 112);
 		min-width: 80vw;
-		max-height: auto;
+		min-height: 20vw;
 		border-style:outset;
 		border-width: 2px;
 		border-color: rgb(100, 100, 128);
 		color: black;
 		text-align: end;
 		font-family: Arial, Helvetica, sans-serif;
-		font-size: 7vh;
+		font-size: 6vh;
 		word-wrap:break-word;
 		border-radius: 10px;
 		margin: 6%;
